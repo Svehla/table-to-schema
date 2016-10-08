@@ -1,74 +1,120 @@
-Introduction
-
-# Motivation
-
-  You're web developer and you have SQL smelly table from 1:N → 1:N → 1:N query
-
-  well... u love schematic structure and mongodb?
-
-  WE HAVE SOLUTION
-
-  use table-to-schema library to convert table to schema
 
 
+Super tiny fast library for convert sql result to json schema
 
-  ♥♥♥ realy tiny library full of functional code ♥♥♥
 
-  ♥♥♥ well tested ♥♥♥
+# Motivace
 
-# Installation
+Library table-to-schama solve problem with convert 2 dimensional data from sql select
+to structure json schema.
 
-download:
-`npm install webpack --save-dev`
+With simply configuration you can set parameters witch split 2 dimensional array
+by 1:N → 1:N → .. → 1:N and return new generate schema json.
 
-# Getting Started
-es6
+
+
+# getting started
+
+## Installation
+
+Using npm:
+
+`npm install table-to-schema --save`
+
+
+## import
+
+ES5
+
+`var tableToSchema = require('table-to-schema')`
+
+ES6
+
 `import tableToSchema from 'table-to-schema'`
 
-## Konfiguration
-1:N → 1:N → 1:N
 
-konfiguration is for every table
-parametr of 1 layer in array
-* DistinctKey → join data (same for one dimension)
-* ChildrenName → name of key with childrens (defualt is `__childrens`)
-* Keys → array of all visible columns
+##Example
+```js
+`import tableToSchema from 'table-to-schema'`
 
-` const config = [
+const resultSql = [
+  { manufact: 'VV(Skoda)',
+    manufactId: 123,
+    car: 'Octavia',
+    carId: 67,
+  },
+  { manufact: 'VV(Skoda)',
+    manufactId: 123,
+    car: 'Fabia',
+    carId: 68,
+  }
+]
 
-  { distinctKey: 'manufact',
 
+const config = [
+  { distinctKey: 'manufact',     
     childrenName: 'manufacts',
-
     keys: [ 'manufact', 'manufactId' ]
-
   },
-
   { distinctKey: 'car',
-
-    childrenName: 'cars',
-
     keys: [ 'car', "carId" ]
-
   },
+]
 
-  { distinctKey: 'engine',
+`const results = tableToSchema(config, resultSql); `
 
-    childrenName: 'engines',
+//RESULT (return json schema by config)
+/*
+[
+  {
+    manufact: "VV(Skoda)",
+    manufactId: 123,
+    manufacts: [
+      {
+        "car": "Octavia",
+        "carId": 67,
+      },
+      {
+        "car": "Fabia",
+        "carId": 68,
+      }
+    ]
+  }
+]
+*/
 
-    keys: [ 'engine', "engineId" ]
+```
 
-  },
 
-  { distinctKey: 'myFunction',
 
-    keys: [ 'myFunction', "myFunctionId" ]
-
-  },
-  
-] `
-
-## call default function with 2 parametr
- * configuration
- * dataFromSql
+## Konfiguration function
+default export function tableToSchema()
 `const results = tableToSchema(config, sqlTableData);`
+
+2 params
+* config
+* source data
+
+
+
+###configuration config's parameter
+For every dimension of your structure you define new item of config array.
+
+Config object
+* DistinctKey → Name of column (unique key for new structure)
+* ChildrenName → Name of key value witch serve children (relation 1:N) (defualt value is `__childrens`)
+* Keys → List of visible column name
+
+
+```js
+const config = [
+  { distinctKey: 'manufact',
+    childrenName: 'manufacts',
+    keys: [ 'manufact', 'manufactId' ]
+  },
+  { distinctKey: 'car',
+    childrenName: 'cars',
+    keys: [ 'car', "carId" ]
+  },
+]
+ ```
