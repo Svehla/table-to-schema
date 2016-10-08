@@ -1,0 +1,22 @@
+{
+  "name": "table-to-scheme",
+  "version": "0.0.1",
+  "description": "Convertor 2 dimensional array to scheme (json tree�)",
+  "main": "index.js",
+  "scripts": {
+    "dev":  " webpack-dev-server --inline ",
+    "test": " webpack  "
+  },
+  "author": "Jakub Švehla",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-es2015-spread": "^6.8.0",
+    "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "mocha": "^3.1.0",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
