@@ -2,7 +2,7 @@
   "name": "table-to-scheme",
   "version": "0.0.1",
   "description": "Convertor 2 dimensional array to scheme (json tree�)",
-  "main": "index.js",
+  "main": "lib/table-to-schema.js",
   "scripts": {
     "dev":  " webpack-dev-server --inline ",
     "test": " webpack-dev-server 'mocha!./test.js' --hot --inline --output-filename test.js "
