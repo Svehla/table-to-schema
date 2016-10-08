@@ -1,6 +1,6 @@
 {
   "name": "table-to-schema",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Convertor 2 dimensional array to schema (json tree)",
   "main": "lib/table-to-schema.min.js",
   "scripts": {

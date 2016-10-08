@@ -2,18 +2,19 @@
 
 Super tiny fast library for convert sql result to json schema
 
+[[website repo](https://github.com/Svehla/table-to-schema)]
 
-# Motivace
+# Motivation
 
-Library table-to-schama solve problem with convert 2 dimensional data from sql select
+Library table-to-schema solves problem with converting 2 dimensional data from sql select
 to structure json schema.
 
-With simply configuration you can set parameters witch split 2 dimensional array
-by 1:N → 1:N → .. → 1:N and return new generate schema json.
+With simple configuration you can set parameters witch split 2 dimensional arrays
+by 1:N → 1:N → .. → 1:N and return new generated json schema.
 
 
 
-# getting started
+# Getting started
 
 ## Installation
 
@@ -22,7 +23,7 @@ Using npm:
 `npm install table-to-schema --save`
 
 
-## import
+## Import
 
 ES5
 
@@ -33,7 +34,7 @@ ES6
 `import tableToSchema from 'table-to-schema'`
 
 
-##Example
+## Example
 ```js
 `import tableToSchema from 'table-to-schema'`
 
@@ -97,10 +98,10 @@ default export function tableToSchema()
 
 
 
-###configuration config's parameter
+### Configuration config's parameter
 For every dimension of your structure you define new item of config array.
 
-Config object
+#### Config object
 * DistinctKey → Name of column (unique key for new structure)
 * ChildrenName → Name of key value witch serve children (relation 1:N) (defualt value is `__childrens`)
 * Keys → List of visible column name
