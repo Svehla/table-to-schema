@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev":  " webpack-dev-server --inline ",
-    "test": " webpack  "
+    "test": " webpack-dev-server 'mocha!./test.js' --hot --inline --output-filename test.js "
   },
   "author": "Jakub Švehla",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
