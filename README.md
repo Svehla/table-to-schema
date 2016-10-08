@@ -3,11 +3,17 @@ Introduction
 # Motivation
 
   You're web developer and you have SQL smelly table from 1:N → 1:N → 1:N query
+
   well... u love schematic structure and mongodb?
+
   WE HAVE SOLUTION
+
   use table-to-schema library to convert table to schema
 
+
+
   ♥♥♥ realy tiny library full of functional code ♥♥♥
+
   ♥♥♥ well tested ♥♥♥
 
 # Installation
@@ -19,7 +25,7 @@ download:
 es6
 `import tableToSchema from 'table-to-schema'`
 
-**Konfiguration**
+## Konfiguration
 1:N → 1:N → 1:N
 
 konfiguration is for every table
@@ -29,24 +35,40 @@ parametr of 1 layer in array
 * Keys → array of all visible columns
 
 ` const config = [
+
   { distinctKey: 'manufact',
+
     childrenName: 'manufacts',
+
     keys: [ 'manufact', 'manufactId' ]
+
   },
+
   { distinctKey: 'car',
+
     childrenName: 'cars',
+
     keys: [ 'car', "carId" ]
+
   },
+
   { distinctKey: 'engine',
+
     childrenName: 'engines',
+
     keys: [ 'engine', "engineId" ]
+
   },
+
   { distinctKey: 'myFunction',
+
     keys: [ 'myFunction', "myFunctionId" ]
+
   },
+  
 ] `
 
-call default function with 2 parametr
+## call default function with 2 parametr
  * configuration
  * dataFromSql
 `const results = tableToSchema(config, sqlTableData);`
