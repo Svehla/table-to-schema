@@ -2,7 +2,7 @@
 
 Super tiny fast library for convert sql result to json schema
 
-[[website repo](https://github.com/Svehla/table-to-schema)]
+[website repo](https://github.com/Svehla/table-to-schema)
 
 # Motivation
 
@@ -24,19 +24,20 @@ Using npm:
 
 
 ## Import
+You reqire only function (update from last version)
 
 ES5
 
-`var tableToSchema = require('table-to-schema')`
+`var tableToSchema = require('../lib/table-to-schema').tableToSchema;`
 
 ES6
 
-`import tableToSchema from 'table-to-schema'`
+`import { tableToSchema } from 'table-to-schema;'`
 
 
 ## Example
 ```js
-`import tableToSchema from 'table-to-schema'`
+import tableToSchema from 'table-to-schema'
 
 const resultSql = [
   { manufact: 'VV(Skoda)',
@@ -62,9 +63,9 @@ const config = [
   },
 ]
 
-`const results = tableToSchema(config, resultSql); `
+const results = tableToSchema(config, resultSql);
 
-//RESULT (return json schema by config)
+//results (return json schema by config)
 /*
 [
   {

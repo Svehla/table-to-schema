@@ -1,6 +1,6 @@
 import mockData from './mockData';
-import tableToSchema from '../lib/table-to-schema';
 
+import { tableToSchema } from '../lib/table-to-schema';
 
 // configurace
 //kontroluju vstupy na keys??? jestli jsou undefined null?
@@ -36,8 +36,8 @@ document.write(`</td><td>`)
 
 const results = tableToSchema(config, mockData);
 document.getElementsByTagName("BODY").innerHTML = JSON.stringify(results)
-console.log(results)
+//console.log(results)
 document.write('<pre>'+JSON.stringify(results, null, 2)+'</pre>');
-console.log(tableToSchema)
+//console.log(tableToSchema)
 
 document.write(`</td><tr></table>`)

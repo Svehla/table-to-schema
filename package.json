@@ -1,15 +1,17 @@
 {
   "name": "table-to-schema",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Convertor 2 dimensional array to schema (json tree)",
   "main": "lib/table-to-schema.min.js",
   "scripts": {
-    "dev":  " webpack-dev-server --inline ",
-    "test": " webpack-dev-server 'mocha!./test.js' --hot --inline --output-filename test.js "
+    "dev": " webpack-dev-server --inline ",
+    "test": "ava",
+    "watch:test": "ava tests/*.js --watch"
   },
   "author": "Jakub Švehla",
   "license": "MIT",
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-es2015-spread": "^6.8.0",
@@ -18,5 +20,10 @@
     "mocha": "^3.1.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
   }
 }
