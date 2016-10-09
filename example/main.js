@@ -1,9 +1,9 @@
 import mockData from './mockData';
 
 import { tableToSchema } from '../lib/table-to-schema';
+//import { tableToSchema } from '../lib/table-to-schema';
 
-// configurace
-//kontroluju vstupy na keys??? jestli jsou undefined null?
+// configuration
 const config = [
   { distinctKey: 'manufact',
     childrenName: 'manufacts',

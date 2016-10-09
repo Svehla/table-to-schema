@@ -90,7 +90,6 @@ const results = tableToSchema(config, resultSql);
 
 
 ## Konfiguration function
-default export function tableToSchema()
 `const results = tableToSchema(config, sqlTableData);`
 
 2 params
@@ -120,3 +119,11 @@ const config = [
   },
 ]
  ```
+
+
+ for real example look to official repo [website repo](https://github.com/Svehla/table-to-schema)
+ and exec these basic commands 
+
+ `npm install`
+
+ `npm run dev`

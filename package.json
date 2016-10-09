@@ -1,10 +1,11 @@
 {
   "name": "table-to-schema",
-  "version": "0.0.5",
-  "description": "Convertor 2 dimensional array to schema (json tree)",
-  "main": "lib/table-to-schema.min.js",
+  "version": "0.0.6",
+  "description": "Convertor arr of obj to json schema (tree)",
+  "main": "dist/table-to-schema.min.js",
   "scripts": {
     "dev": " webpack-dev-server --inline ",
+    "min": " webpack",
     "test": "ava",
     "watch:test": "ava tests/*.js --watch"
   },
@@ -21,6 +22,16 @@
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2"
   },
+  "keywords": [
+    "json",
+    "table",
+    "schema",
+    "format",
+    "structur",
+    "sql",
+    "convertor",
+    "jsObject"
+  ],
   "ava": {
     "require": [
       "babel-register"
