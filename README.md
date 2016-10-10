@@ -9,7 +9,7 @@ Super tiny fast library for convert sql result to json schema
 Library table-to-schema solves problem with converting 2 dimensional data from sql select
 to structure json schema.
 
-With simple configuration you can set parameters witch split 2 dimensional arrays
+With simple configuration you can set parameters which split 2 dimensional arrays
 by 1:N → 1:N → .. → 1:N and return new generated json schema.
 
 
@@ -103,7 +103,7 @@ For every dimension of your structure you define new item of config array.
 
 #### Config object
 * DistinctKey → Name of column (unique key for new structure)
-* ChildrenName → Name of key value witch serve children (relation 1:N) (defualt value is `__childrens`)
+* ChildrenName → Name of key value which serve children (relation 1:N) (defualt value is `__childrens`)
 * Keys → List of visible column name
 
 
