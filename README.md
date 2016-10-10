@@ -28,7 +28,7 @@ You reqire only function (update from last version)
 
 ES5
 
-`var tableToSchema = require('../lib/table-to-schema').tableToSchema;`
+`var tableToSchema = require('table-to-schema').tableToSchema;`
 
 ES6
 
@@ -89,7 +89,7 @@ const results = tableToSchema(config, resultSql);
 
 
 
-## Konfiguration function
+## Configuration function
 `const results = tableToSchema(config, sqlTableData);`
 
 2 params
@@ -122,7 +122,7 @@ const config = [
 
 
  for real example look to official repo [website repo](https://github.com/Svehla/table-to-schema)
- and exec these basic commands 
+ and exec these basic commands
 
  `npm install`
 

@@ -1,6 +1,6 @@
 {
   "name": "table-to-schema",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Convertor arr of obj to json schema (tree)",
   "main": "dist/table-to-schema.min.js",
   "scripts": {
